@@ -1,4 +1,12 @@
-<h1>listar usuário</h1> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Lista de Fornecedores</h1> 
 <?php 
     $sql = "SELECT * FROM usuarios";
 
@@ -11,14 +19,21 @@
         print "<tr>";
              print "<th> # </th>";
              print "<th> Nome </th>";
-             print "<th> E-mail </th>";
-             print "<th> Ações</th>";
+             print "<th> CNPJ </th>";
+             print "<th> Especialidade </th>";
+             print "<th> CEP </th>";           
+             print "<th> Editar</th>";
+             
             print"</tr>";
         while ($row = $res -> fetch_object()) {
             print "<tr>";
              print "<td>" . $row->id; "</td>";
              print "<td>" . $row->nome; "</td>";
-             print "<td>" . $row->email; "</td>";
+             
+             print "<td>" . $row->cnpj; "</td>";
+             print "<td>" . $row->especialidade; "</td>";
+             print "<td>" . $row->cep; "</td>";
+             
              print"<td>
 
                     <div class='grid text-center'>
@@ -38,3 +53,5 @@
     }
 
 ?>
+</body>
+</html>

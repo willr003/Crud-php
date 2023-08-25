@@ -7,33 +7,63 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <title>Cadastro</title>
+    <style>
+      .nav{
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+    <title>Forn Tech</title>
   </head>
   <body>
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Cadastro</a>
+  <div class="container-fluid " >
+    <a class="navbar-brand" href="#" style="font-weight: bold">Forn Tech</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?page=novo">Novo usuário</a> 
+          <a class="nav-link" href="?page=novo" >Novo usuário</a> 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?page=listar">Listar Usuário</a>
+          <a class="nav-link" href="?page=listar" >Lista Usuário</a>
         </li>
        
       </ul>
     </div>
   </div>
 </nav>
+
+<div class="home">
+  <section class="hero bg-primary text-white text-center py-5">
+      <div class="container">
+          <h1 class="display-4" style="font-weight: bold">Bem-vindo à Forn Tech</h1>
+          <p class="lead" style="font-weight: bold">Quer se tornar um fornecedor? Cadastre-se aqui!</p>
+          <a href="?page=novo" class="btn btn-light btn-lg mt-3" >Cadastre-se</a>
+      </div>
+  </section>
+  </div>
+  
+  <section id="about" class="py-5">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6">
+                  <h2 class="display-4" style="font-weight: bold">Sobre Nós</h2>
+                  <p>Somos um sistema de cadastro de fornecedores que há 12 anos realiza serviços de tecnologia para empresas do comércio, indústria e serviços.</p>
+              </div>
+              <div class="col-lg-6">
+                  <img src="./forn.png" alt="Imagem de Sobre Nós" class="img-fluid">
+              </div>
+          </div>
+      </div>
+  </section>
+
 
     <div class="container">
         <div class="row">
@@ -55,7 +85,7 @@
                                 include("editar-usuario.php");
                                 break;
                                 default:
-                                print "<h1>Bem vindo!</h1>";
+                                 ;
                     }
                 
                 ?>

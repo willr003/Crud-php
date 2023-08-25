@@ -3,10 +3,19 @@
         case 'cadastrar':
             $nome = $_POST["nome"];
             $email = $_POST["email"];
-            $senha = md5($_POST["senha"]); //md5 serve para não expor a senha no banco de dados
+            $senha = md5($_POST["senha"]);   //md5 serve para não expor a senha no banco de dados
+            $cnpj = $_POST["cnpj"];
+            $especialidade = $_POST["especialidade"];
+            $cep = $_POST["cep"];
+            $bairro = $_POST["bairro"];
+            $rua = $_POST["rua"];
+            $cidade = $_POST["cidade"];
+            $estado = $_POST["estado"];
 
-            $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (
-                '{$nome}', '{$email}', '{$senha}')"; 
+
+
+            $sql = "INSERT INTO usuarios (nome, email, senha, cnpj, especialidade, cep, bairro, rua, cidade, estado) VALUES (
+                '{$nome}', '{$email}', '{$senha}','{$cnpj}','{$especialidade}', '{$cep}', '{$bairro}', '{$rua}', '{$cidade}', '{$estado}')"; 
 
                 $res = $conn->query($sql);
                 if ($res==true) {
@@ -22,8 +31,15 @@
             $nome = $_POST["nome"];
             $email = $_POST["email"];
             $senha = md5($_POST["senha"]);
+            $cnpj = $_POST["cnpj"];
+            $especialidade = $_POST["especialidade"];
+            $cep = $_POST["cep"];
+            $bairro = $_POST["bairro"];
+            $rua = $_POST["rua"];
+            $cidade = $_POST["cidade"];
+            $estado = $_POST["estado"];
 
-            $sql = "UPDATE usuarios SET nome='{$nome}', email='{$email}', senha='{$senha}' WHERE id=".$_REQUEST["id"];
+            $sql = "UPDATE usuarios SET nome='{$nome}', email='{$email}', senha='{$senha}', cnpj='{$cnpj}', especialidade='{$especialidade}', cep='{$cep}', bairro='{$bairro}', rua='{$rua}', cidade='{$cidade}', estado='{$estado}' WHERE id=".$_REQUEST["id"];
 
             $res = $conn->query($sql);
 
