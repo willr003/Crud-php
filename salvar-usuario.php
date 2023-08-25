@@ -11,8 +11,7 @@
             $rua = $_POST["rua"];
             $cidade = $_POST["cidade"];
             $estado = $_POST["estado"];
-
-
+            
 
             $sql = "INSERT INTO usuarios (nome, email, senha, cnpj, especialidade, cep, bairro, rua, cidade, estado) VALUES (
                 '{$nome}', '{$email}', '{$senha}','{$cnpj}','{$especialidade}', '{$cep}', '{$bairro}', '{$rua}', '{$cidade}', '{$estado}')"; 

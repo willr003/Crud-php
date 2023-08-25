@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+         .voltar {
+            background-color: #00008b;
+            border-radius: 15px;
+            padding: 10px 13px;
+            margin-bottom: 25px;
+            margin-left: -35px;
+            text-decoration: none;
+            color: white;
+            border: solid 2px #00008b;
+            transition: 0.5s;
+        }
+        .voltar:hover{
+            background-color: #00008b3f ;
+        }
+     
+    </style>
 </head>
 <body>
+<a href="javascript:history.back()" class="btn btn-link mt-3 voltar">Voltar para a página anterior</a>
 <h1>Lista de Fornecedores</h1> 
 <?php 
     $sql = "SELECT * FROM usuarios";

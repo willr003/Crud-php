@@ -1,100 +1,87 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forn Tech</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    .nav {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-      .nav{
-        display: flex;
-        justify-content: space-between;
-      }
-    </style>
-    <title>Forn Tech</title>
-  </head>
-  <body>
-
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid " >
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#" style="font-weight: bold">Forn Tech</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse " id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="?page=home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?page=novo" >Novo usuário</a> 
+          <a class="nav-link"  href="?page=novo">Novo usuário</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?page=listar" >Lista Usuário</a>
+          <a class="nav-link" aria-current="page" href="?page=listar">Lista Usuário</a>
         </li>
-       
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="home">
-  <section class="hero bg-primary text-white text-center py-5">
-      <div class="container">
-          <h1 class="display-4" style="font-weight: bold">Bem-vindo à Forn Tech</h1>
-          <p class="lead" style="font-weight: bold">Quer se tornar um fornecedor? Cadastre-se aqui!</p>
-          <a href="?page=novo" class="btn btn-light btn-lg mt-3" >Cadastre-se</a>
-      </div>
-  </section>
-  </div>
-  
-  <section id="about" class="py-5">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-6">
-                  <h2 class="display-4" style="font-weight: bold">Sobre Nós</h2>
-                  <p>Somos um sistema de cadastro de fornecedores que há 12 anos realiza serviços de tecnologia para empresas do comércio, indústria e serviços.</p>
-              </div>
-              <div class="col-lg-6">
-                  <img src="./forn.png" alt="Imagem de Sobre Nós" class="img-fluid">
-              </div>
-          </div>
-      </div>
-  </section>
+<!-- Conteúdo das diferentes páginas -->
+<div class="container">
+  <div class="row">
+    <div class="col mt-5">
 
+      <?php
+      include("config.php");
+      $page = @$_REQUEST["page"];
+      switch ($page) {
+        case 'home':
+          include("home.php");
+          break;
+        case "novo":
+          include("novo-usuario.php");
+          break;
+        case "listar":
+          include("listar-usuario.php");
+          break;
+        case "salvar":
+          include("salvar-usuario.php");
+          break;
+        case "editar":
+          include("editar-usuario.php");
+          break;
 
-    <div class="container">
-        <div class="row">
-            <div class="col mt-5"> 
-                <?php
+          
+      }
+      ?>
+      <script>
+        var hideButton = document.getElementById("hideButton");
+        var content = document.querySelector(".content");
 
-                    include("config.php");
-                    switch(@$_REQUEST["page"]){
-                        case "novo":
-                            include ("novo-usuario.php");
-                        break;
-                            case "listar":
-                                include ("listar-usuario.php");
-                            break;
-                            case "salvar":
-                              include("salvar-usuario.php");
-                              break;
-                              case "editar":
-                                include("editar-usuario.php");
-                                break;
-                                default:
-                                 ;
-                    }
-                
-                ?>
-            </div>
-        </div>
+        hideButton.addEventListener("click", function() {
+            content.classList.add("hidden");
+        });
+    </script>
+
     </div>
+  </div>
+</div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 
-  
-  </body>
+</body>
 </html>
